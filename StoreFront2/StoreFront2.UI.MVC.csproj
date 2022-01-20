@@ -160,23 +160,28 @@
     <Content Include="Content\fonts\icomoon\fonts\icomoon.svg" />
     <Content Include="Content\fonts\icomoon\Read Me.txt" />
     <Content Include="Content\fonts\icomoon\style.css" />
-    <Content Include="Content\images\blog_1.jpg" />
-    <Content Include="Content\images\cloth_1.jpg" />
-    <Content Include="Content\images\cloth_2.jpg" />
-    <Content Include="Content\images\cloth_3.jpg" />
+    <Content Include="Content\images\eaglenebula.jpg" />
+    <Content Include="Content\images\earth2.jpg" />
+    <Content Include="Content\images\explodingStar.jpg" />
     <Content Include="Content\images\galaxySpacelabs.jpg" />
     <Content Include="Content\images\galaxySpacelabs2.jpg" />
     <Content Include="Content\images\galaxySpacelabs3.jpg" />
-    <Content Include="Content\images\hero_1.png" />
+    <Content Include="Content\images\girl1.jpg" />
+    <Content Include="Content\images\guy2.jpg" />
+    <Content Include="Content\images\guy3.jpg" />
+    <Content Include="Content\images\manonthemoon.jpg" />
+    <Content Include="Content\images\moon.jpg" />
+    <Content Include="Content\images\nebula.jpg" />
     <Content Include="Content\images\person_1.jpg" />
     <Content Include="Content\images\person_2.jpg" />
     <Content Include="Content\images\person_3.jpg" />
     <Content Include="Content\images\person_4.jpg" />
     <Content Include="Content\images\rocketDetails.png" />
     <Content Include="Content\images\rocketSpaceLabs.jpg" />
-    <Content Include="Content\images\shoe.png" />
-    <Content Include="Content\images\shoe_1.jpg" />
+    <Content Include="Content\images\spaceFavicon.png" />
+    <Content Include="Content\images\spacelabs.jpg" />
     <Content Include="Content\images\spaceSuit.jpg" />
+    <Content Include="Content\images\spiralgalaxy.jpg" />
     <Content Include="Content\images\toolsSpacelab.png" />
     <Content Include="Content\js\aos.js" />
     <Content Include="Content\js\bootstrap.min.js" />
@@ -424,6 +429,7 @@
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Shared\OriginalLayout.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -431,7 +437,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\StoreFront2.DATA.EF\StoreFront2.DATA.EF.csproj">
+      <Project>{b5f75524-d0cc-451b-bb48-3131f34fd948}</Project>
+      <Name>StoreFront2.DATA.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

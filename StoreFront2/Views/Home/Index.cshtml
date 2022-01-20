@@ -10,7 +10,7 @@
                 <div class="intro-text text-center text-md-left">
                     <p class="mb-4">Welcome to Space Labs Inc and thank you for considering us for your next trip to space. We here at Space Labs Inc like to offer the best quality product, as well as the highest level of customer service that we can provide to our customers. Let us accompany you on your next journey to the stars.</p>
                     <p>
-                        <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                        @Html.ActionLink("Shop Now", "Shop", "Home", new { @class = "btn btn-primary" })
                     </p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 </div>
 
 <div class="site-section site-section-sm site-blocks-1">
-    <div class="container1">
+    <div class="container1 p-2">
         <div class="row">
             <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
                 <div class="icon mr-4 align-self-start">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="text">
                     <h2 class="text-uppercase">Free Shipping</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    <p>We offer free shipping on all of our products. All material is shipped within state and federal guidelines. Product will be packaged and shipped by our facility to ensure the safety of our customers and our crew.  </p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="text">
                     <h2 class="text-uppercase">Free Returns</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    <p>We stock all parts, tools and equipment assemblies here at our facility to ensure a hassle-free exchange or return of any product we offer. All returns are exchangable on location. Full inspection of product will considered at time of exchange for a refund.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -45,51 +45,51 @@
                 </div>
                 <div class="text">
                     <h2 class="text-uppercase">Customer Support</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    <p>Our customer support staff is here to assist you in any of your purchasing, returning or support needs. Our support staff is available 24/7.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="starbackground">
-    <div class="site-section site-blocks-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                        <figure class="image">
-                            <img src="~/Content/images/spaceSuit.jpg" alt="" class="img-fluid">
-                        </figure>
-                        <div class="text">
-                            <span class="text-uppercase">Category</span>
-                            <h3>Suit</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                        <figure class="image">
-                            <img src="~/Content/images/toolsSpacelab.png" alt="" class="img-fluid">
-                        </figure>
-                        <div class="text">
-                            <span class="text-uppercase">Category</span>
-                            <h3>Tools</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                        <figure class="image">
-                            <img src="~/Content/images/rocketDetails.png" alt="" class="img-fluid">
-                        </figure>
-                        <div class="text">
-                            <span class="text-uppercase">Category</span>
-                            <h3>Rocketry</h3>
-                        </div>
-                    </a>
-                </div>
+
+<div class="site-section site-blocks-2" style="background-image: url(../../Content/images/spiralgalaxy.jpg); background-size: auto" >
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="">
+                <a class="block-2-item" href="#">
+                    <figure class="image">
+                        <img src="~/Content/images/spaceSuit.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Category</span>
+                        <h3>Suit</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+                <a class="block-2-item" href="#">
+                    <figure class="image">
+                        <img src="~/Content/images/toolsSpacelab.png" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Category</span>
+                        <h3>Tools</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+                <a class="block-2-item" href="#">
+                    <figure class="image">
+                        <img src="~/Content/images/rocketDetails.png" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Category</span>
+                        <h3>Rocketry</h3>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
+
 

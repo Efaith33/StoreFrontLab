@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace StoreFront2.Controllers
+namespace StoreFront2.UI.MVC.Controllers
 {
     public class HomeController : Controller
     {
@@ -10,16 +10,21 @@ namespace StoreFront2.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Authorize]
+       
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "About Space Labs Inc";
 
             return View();
         }
 
-        [HttpGet]
+
+        public ActionResult Shop()
+        {
+            return View();
+        }
+
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -118,7 +118,7 @@ a {
 
 @media (min-width: 768px) {
     .site-section {
-        padding: 5em 0;
+        padding: 2em 0;
     }
 }
 
@@ -126,9 +126,11 @@ a {
     padding: 4em 0;
 }
 
-.site-section-heading {
-    font-size: 30px;
-    color: #25262a;
+.site-section-heading1 {
+    padding: 5px 5px;
+    background: rgba(255,245,245,.5);
+    font-size: 20px;
+    color: black;
     position: relative;
 }
 
@@ -1072,7 +1074,11 @@ a {
     font-size: 16px;
 }
 
-#starbackground {
-    background-image: url('../../Content/images/galaxySpacelabs3.jpg');
-    background-size: cover;
+.container1 {
+    background: rgba(255,245,245,.5);
 }
+
+#contactearth {
+    background: rgba(255,245,245,.4);
+}
+

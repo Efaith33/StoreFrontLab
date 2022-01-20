@@ -1,27 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+    <title>Space Labs Inc Storefront</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/images/spaceFavicon.png" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
     <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
-
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/css/magnific-popup.css">
     <link rel="stylesheet" href="~/Content/css/jquery-ui.css">
     <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/Content/css/owl.theme.default.min.css">
-
-
     <link rel="stylesheet" href="~/Content/css/aos.css">
-
     <link rel="stylesheet" href="~/Content/css/style.css">
 
 </head>
+
+
 <body>
-    @*@RenderBody()*@
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             <div class="site-navbar-top">
@@ -37,7 +35,7 @@
 
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="site-logo">
-                                <a href="index.html" class="js-logo-clone">Space Labs Inc</a>
+                                <a href="@Url.Action("Index", "Home")" class="js-logo-clone">Space Labs Inc</a>
                             </div>
                         </div>
 
@@ -62,16 +60,10 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
                 <div class="container">
                     <ul class="site-menu js-clone-nav d-none d-md-block">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li class="has-children active">
-                            <a href="shop.html">Shop</a>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Shop", "Shop", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
                 </div>
             </nav>
@@ -89,10 +81,10 @@
                             </div>
                             <div class="col-md-12 col-lg-8">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Features</a></li>
-                                    <li><a href="#">Shopping cart</a></li>
-                                    <li><a href="#">Hardware</a></li>
-                                    <li><a href="#">Software</a></li>
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Shop", "Shop", "Home")</li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -146,6 +138,6 @@
     <script src="~/Content/js/aos.js"></script>
 
     <script src="~/Content/js/main.js"></script>
-
+    @RenderSection("scripts", required: false)
 </body>
 </html>
