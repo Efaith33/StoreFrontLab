@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
-    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Content/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/Content/css/jquery-ui.css">
-    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Content/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="~/Content/css/aos.css">
-    <link rel="stylesheet" href="~/Content/css/style.css">
 
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+        @*
+        <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Content/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/Content/css/jquery-ui.css">
+        <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/Content/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="~/Content/css/aos.css">
+        <link rel="stylesheet" href="~/Content/css/style.css">*@
+
+    @Styles.Render("~/Content/css")
+
+    @* link for datatables *@
 </head>
 
 
@@ -84,7 +89,7 @@
                                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                                     <li>@Html.ActionLink("About", "About", "Home")</li>
                                     <li>@Html.ActionLink("Shop", "Shop", "Home")</li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                                 </ul>
                             </div>
                         </div>
@@ -93,8 +98,12 @@
                         <div class="block-5 mb-5">
                             <h3 class="footer-heading mb-4">Contact Info</h3>
                             <ul class="list-unstyled">
-                                <li class="address"><p>203 Fake St. Lamesville,<br/>
-                                    Tamba Bay, Florida, USA</p></li>
+                                <li class="address">
+                                    <p>
+                                        203 Fake St. Lamesville,<br />
+                                        Tamba Bay, Florida, USA
+                                    </p>
+                                </li>
                                 <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
                                 <li class="email">emailaddress@domain.com</li>
                             </ul>
@@ -129,15 +138,17 @@
         </footer>
     </div>
 
-    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
-    <script src="~/Content/js/jquery-ui.js"></script>
-    <script src="~/Content/js/popper.min.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/owl.carousel.min.js"></script>
-    <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/Content/js/aos.js"></script>
+        @*<script src="~/Content/js/jquery-3.3.1.min.js"></script>
+        <script src="~/Content/js/jquery-ui.js"></script>
+        <script src="~/Content/js/popper.min.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/owl.carousel.min.js"></script>
+        <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
+        <script src="~/Content/js/aos.js"></script>
 
-    <script src="~/Content/js/main.js"></script>
+        <script src="~/Content/js/main.js"></script>*@
+
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

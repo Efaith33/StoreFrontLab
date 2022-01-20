@@ -160,6 +160,8 @@
     <Content Include="Content\fonts\icomoon\fonts\icomoon.svg" />
     <Content Include="Content\fonts\icomoon\Read Me.txt" />
     <Content Include="Content\fonts\icomoon\style.css" />
+    <Content Include="Content\images\CommAssembly.jpg" />
+    <Content Include="Content\images\DCM.jpg" />
     <Content Include="Content\images\eaglenebula.jpg" />
     <Content Include="Content\images\earth2.jpg" />
     <Content Include="Content\images\explodingStar.jpg" />
@@ -169,6 +171,8 @@
     <Content Include="Content\images\girl1.jpg" />
     <Content Include="Content\images\guy2.jpg" />
     <Content Include="Content\images\guy3.jpg" />
+    <Content Include="Content\images\Helmet.jpg" />
+    <Content Include="Content\images\LowerTorsoSuit.jpg" />
     <Content Include="Content\images\manonthemoon.jpg" />
     <Content Include="Content\images\moon.jpg" />
     <Content Include="Content\images\nebula.jpg" />
@@ -176,6 +180,7 @@
     <Content Include="Content\images\person_2.jpg" />
     <Content Include="Content\images\person_3.jpg" />
     <Content Include="Content\images\person_4.jpg" />
+    <Content Include="Content\images\PLSS.png" />
     <Content Include="Content\images\rocketDetails.png" />
     <Content Include="Content\images\rocketSpaceLabs.jpg" />
     <Content Include="Content\images\spaceFavicon.png" />
@@ -183,6 +188,7 @@
     <Content Include="Content\images\spaceSuit.jpg" />
     <Content Include="Content\images\spiralgalaxy.jpg" />
     <Content Include="Content\images\toolsSpacelab.png" />
+    <Content Include="Content\images\UpperTorsoSuit.jpg" />
     <Content Include="Content\js\aos.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />

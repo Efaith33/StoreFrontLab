@@ -128,7 +128,7 @@ a {
 
 .site-section-heading1 {
     padding: 5px 5px;
-    background: rgba(255,245,245,.5);
+    background: rgba(255,245,245,.6);
     font-size: 20px;
     color: black;
     position: relative;
@@ -1042,7 +1042,7 @@ a {
         }
 
 .block-38 .block-38-header .block-38-heading {
-    color: #000;
+    color: #b3b3b3;
     margin: 0;
     font-weight: 300;
 }
@@ -1075,10 +1075,10 @@ a {
 }
 
 .container1 {
-    background: rgba(255,245,245,.5);
+    background: rgba(255,245,245,.6);
 }
 
 #contactearth {
-    background: rgba(255,245,245,.4);
+    background: rgba(255,245,245,.5);
 }
 
