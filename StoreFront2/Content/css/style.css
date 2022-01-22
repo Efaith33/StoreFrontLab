@@ -28,6 +28,7 @@ a {
     }
 
 .text-black {
+    text-align:center;
     color: white;
 }
 
@@ -800,7 +801,7 @@ a {
 .block-4 {
     -webkit-box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    background: rgba(255,245,245,.5);
 }
 
     .block-4 .block-4-text h3 {
@@ -978,7 +979,7 @@ a {
         }
 
         .site-block-27 ul li.active a, .site-block-27 ul li.active span {
-            background: #7971ea;
+            background: midnightblue;
             color: #fff;
             border: 1px solid transparent;
         }
