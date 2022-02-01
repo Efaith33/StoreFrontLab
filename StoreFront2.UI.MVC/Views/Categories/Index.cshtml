@@ -1,0 +1,30 @@
+﻿@model IEnumerable<StoreFront2.DATA.EF.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2 class="text-center mt-2">@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    <span style="float: right">
+        @Html.ActionLink("Back to Products Table", "ProductsTable", "Products", null, new { @class = "btn btn-primary" })
+    </span>
+</p>
+<table class="table text-center">
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryID })
+        </td>
+    </tr>
+}
+
+</table>

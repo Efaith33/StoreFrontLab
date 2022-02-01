@@ -9,11 +9,11 @@
         <EntityTypeShape EntityType="StoreFrontModel.Department" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StoreFrontModel.Employee" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="StoreFrontModel.Product_Status" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StoreFrontModel.Product" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="StoreFrontModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_Employees_Department" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_Employees_Employees" ManuallyRouted="false" />
-        <AssociationConnector Association="StoreFrontModel.FK_Products_Product_Status" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StoreFrontModel.Product" Width="1.5" PointX="8" PointY="2.875" />
+        <AssociationConnector Association="StoreFrontModel.FK_Products_Categories" />
+        <AssociationConnector Association="StoreFrontModel.FK_Products_Product_Status" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StoreFront2.DATA.EF.Department>
+
+@{
+    ViewBag.Title = "Departments";
+}
+
+<h2 class="text-center mt-2">@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    <span style="float: right">
+        @Html.ActionLink("Back to Products Table", "ProductsTable", "Products", null, new { @class = "btn btn-primary" })
+    </span>
+</p>
+<table class="table text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DepartmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DepartmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DepartmentID })
+        </td>
+    </tr>
+}
+
+</table>

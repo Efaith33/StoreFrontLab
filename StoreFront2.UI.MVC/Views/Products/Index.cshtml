@@ -1,0 +1,123 @@
+﻿@model IEnumerable<StoreFront2.DATA.EF.Product>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Shop All";
+}
+
+@* You could add a button that only admin users see that takes them to the table view*@
+
+<div class="site-section" style="background-image: url('../../Content/images/explodingStar.jpg'); background-repeat:no-repeat; background-size: cover">
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-9 order-2">
+                <div class="row">
+                    <div class="col-md-12 mb-5">
+                        <div class="mb-4"><h2 class="text-black h5">Shop All</h2></div>
+                        @Html.ActionLink("Table View", "ProductsTable", "Products", null, new { @class = "btn btn-primary" } )
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                            <div class="block-4 text-center border">
+                                <figure class="block-4-image">
+                                    <a href="@Url.Action("Details", "Products", new { id = item.ProductID })"><img src="~/Content/images/t_@item.ProductImage" alt="Product Image"></a>
+                                </figure>
+                                <div class="block-4-text p-4">
+                                    <h3><a href="@Url.Action("Details", "Products", new { id = item.ProductID })">@item.Name</a></h3>
+                                    <p class="text-primary font-weight-bold">$@item.Price</p>
+                                    @Html.ActionLink("Add To Cart", "Index", "Products", new { @class = "btn btn-primary" })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-12 text-center">
+                        <div class="site-block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 order-1 mb-5 mb-md-0">
+                <div class="border p-4 rounded mb-4">
+                    <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "1"})" class="d-flex"><span>Suit</span> <span class="text-black ml-auto">(12)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "2"})" class="d-flex"><span>Tools</span> <span class="text-black ml-auto">(6)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "3"})" class="d-flex"><span>Rocketry</span> <span class="text-black ml-auto">(6)</span></a></li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+                        <div id="slider-range" class="border-primary"></div>
+                        <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-section site-blocks-2">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-md-7 site-section-heading text-center pt-4">
+                            <h2>Categories</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
+                            <a class="block-2-item" href="#">
+                                <figure class="image">
+                                    <img src="~/Content/images/spaceSuit.jpg" alt="" class="img-fluid">
+                                </figure>
+                                <div class="text">
+                                    <span class="text-uppercase">Collections</span>
+                                    <h3>Suit</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+                            <a class="block-2-item" href="#">
+                                <figure class="image">
+                                    <img src="~/Content/images/toolsSpacelab.png" alt="" class="img-fluid">
+                                </figure>
+                                <div class="text">
+                                    <span class="text-uppercase">Collections</span>
+                                    <h3>Tools</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+                            <a class="block-2-item" href="#">
+                                <figure class="image">
+                                    <img src="~/Content/images/rocketDetails.png" alt="" class="img-fluid">
+                                </figure>
+                                <div class="text">
+                                    <span class="text-uppercase">Collections</span>
+                                    <h3>Rocketry</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

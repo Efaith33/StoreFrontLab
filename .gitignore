@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # To prevent sensitive info pushed to github
-/StoreFront/configs/
+/StoreFront2.UI.MVC/configs/

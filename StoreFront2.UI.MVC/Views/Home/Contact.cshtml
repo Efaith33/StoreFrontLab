@@ -1,0 +1,67 @@
+﻿@model StoreFront2.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact Space Labs Inc";
+}
+
+<div style="background-image: url(../../Content/images/manonthemoon.jpg); background-size:cover" data-aos="fade">
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-7" id="contactearth">
+                    <h2 class="h3 mb-3 text-center">@ViewBag.Title</h2>
+                    <div class="p-3 p-lg-5 contactBorder">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label for="c_fname">First Name <span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control"} })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="c_lname">Last Name <span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_email">Email <span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control"} })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_subject">Subject </label>
+                                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_message">Message </label>
+                                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <button type="submit" id="form-submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -21,6 +21,7 @@ namespace StoreFront2.DATA.EF
         public decimal Price { get; set; }
         public int ProductStatusID { get; set; }
         public Nullable<int> Quanity { get; set; }
+        public string ProductImage { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Product_Status Product_Status { get; set; }

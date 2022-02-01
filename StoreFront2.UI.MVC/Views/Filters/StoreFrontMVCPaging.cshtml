@@ -1,0 +1,78 @@
+﻿@model PagedList.IPagedList<StoreFront2.DATA.EF.Product>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "StoreFront Paging";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("StoreFrontMVCPaging", "Filters", FormMethod.Get))
+{
+    <div class="col-md-6">
+        <P>
+            Search by Name: @Html.TextBox("SearchString", ViewBag.SearchString as string)
+            <input type="submit" value="search"/>
+        </P>
+    </div>
+}
+
+<div class="row m-4">
+    <div class="col-md-12">
+        <div class="site-block-27">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("StoreFrontMVCPaging", new { page, searchString = ViewBag.SearchString }))
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Quanity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Product_Status.ProductStatusName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quanity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Status.ProductStatusName)
+            </td>
+        </tr>
+    }
+
+</table>

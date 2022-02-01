@@ -1,0 +1,96 @@
+﻿@model IEnumerable<StoreFront2.DATA.EF.Product>
+
+@{
+    ViewBag.Title = "Product Search";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+@*<div class="row-border panel-body panel-primary">
+        <form method="get" action="~/Filters/ProductSearch" class="form-horizontal pull-left">
+            @*
+                Form methods:
+                Post - form data is sent in the body of the HttpRequest
+                - used typically when creating a record, or sending an email
+                Get - form data is sent in the query string in key/value pairs
+                - primarily used for searches/filters
+
+            <div class="form-group">
+                <div class="col-xs-offset-1 col-xs-11 col-sm-offset-0 col-sm-2">
+                    <label for="searchFilter">Search Products</label>
+                </div>
+
+                <div class="col-xs-offset-1 col-xs-11 col-sm-offset-0 col-sm-2">
+                    <input type="text" name="searchFilter" />
+
+                    @Html.DropDownList("CategoryID", null, "Select a Category", htmlAttributes: new { @class = "form-control" })
+                </div>
+
+                <div class="col-xs-11 col-xs-11 col-sm-offset-0 col-sm-2">
+                    <input type="submit" value="Go!" class="btn btn-primary" />
+                </div>
+            </div>
+
+
+        </form>
+    </div>*@
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quanity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Status.ProductStatusName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quanity)
+            </td>
+            <td>
+                <img src="~/Content/images/t_@item.ProductImage" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Status.ProductStatusName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Products", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", "Products", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", "Products", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>

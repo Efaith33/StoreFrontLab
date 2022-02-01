@@ -1,0 +1,31 @@
+﻿@model StoreFront2.DATA.EF.Category
+
+@{
+    ViewBag.Title = "Delete Category " + $"{Model.CategoryName} ?";
+}
+
+
+
+<div class="text-center m-2">
+    <h2>@ViewBag.Title</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
