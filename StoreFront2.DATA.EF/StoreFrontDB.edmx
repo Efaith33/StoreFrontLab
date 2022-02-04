@@ -52,6 +52,14 @@
           <Property Name="Quanity" Type="int" />
           <Property Name="ProductImage" Type="nvarchar" MaxLength="133" />
         </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="75" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Employees_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
@@ -106,6 +114,7 @@
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product Status" EntityType="Self.Product Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employees_Department" Association="Self.FK_Employees_Department">
             <End Role="Department" EntitySet="Department" />
             <End Role="Employees" EntitySet="Employees" />
@@ -213,6 +222,7 @@
             <End Role="Product_Status" EntitySet="Product_Status" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
+          <EntitySet Name="UserDetails" EntityType="StoreFrontModel.UserDetail" />
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -253,6 +263,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -308,6 +326,15 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="StoreFrontModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

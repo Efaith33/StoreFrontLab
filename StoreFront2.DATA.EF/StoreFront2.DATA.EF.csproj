@@ -88,6 +88,9 @@
       <DependentUpon>StoreFrontDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="StoreFrontMetadata\StoreFrontMetadata.cs" />
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>StoreFrontDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="StoreFrontDB.edmx">

@@ -153,20 +153,20 @@ namespace StoreFront2.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
-                {                 
-                    //*******??*******//
+                {
+                    
 
-                    //#region Assign UserDetails during registration
-                    //UserDetail newUserDeets = new UserDetail();
-                    //newUserDeets.UserID = user.Id;
-                    //newUserDeets.FirstName = model.FirstName;
-                    //newUserDeets.LastName = model.LastName;
+                    #region Assign UserDetails during registration
+                    UserDetail newUserDeets = new UserDetail();
+                    newUserDeets.UserID = user.Id;
+                    newUserDeets.FirstName = model.FirstName;
+                    newUserDeets.LastName = model.LastName;
 
 
-                    //StoreFrontEntities db = new StoreFrontEntities();
-                    //db.UserDetails.Add(newUserDeets);
-                    //db.SaveChanges();
-                    //#endregion
+                    StoreFrontEntities db = new StoreFrontEntities();
+                    db.UserDetails.Add(newUserDeets);
+                    db.SaveChanges();
+                    #endregion
 
                     return View("Login");
                     //UserManager.AddToRole(user.Id, "User");

@@ -35,23 +35,29 @@
 
                         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                             <div class="site-top-icons">
-                                <ul>
-                                    <li><a href="@Html.Partial("_LoginPartial")"><span class="icon icon-person"></span></a></li>
-                                    <li>
-                                        <a href="@Url.Action("Index", "ShoppingCart")" class="site-cart">
-                                            <span class="icon icon-shopping_cart"></span>
-                                            
-
-                                            @if (Session["cart"] != null &&
-                                                ((Dictionary<int, StoreFront2.Models.CartItemViewModel>)Session["cart"]).Count > 0
-                                                )
-                                            {
-                                            <span class="count">@(((Dictionary<int, StoreFront2.Models.CartItemViewModel>)Session["cart"]).Count)</span>
-                                            }
-
-                                        </a>
+                                <ul> 
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="icon icon-person"></span></a>
+                                        <div class="dropdown-menu account-dropdown" style="background-color: lightgray;">
+                                            @Html.Partial("_LoginPartial")
+                                        </div>
                                     </li>
-                                    <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                    
+                                    <a href="@Url.Action("Index", "ShoppingCart")" class="site-cart">
+                                        <li class="icon icon-shopping_cart"></li>
+
+
+                                        @if (Session["cart"] != null &&
+                                            ((Dictionary<int, StoreFront2.Models.CartItemViewModel>)Session["cart"]).Count > 0
+                                            )
+                                        {
+                                            <li class="count">@(((Dictionary<int, StoreFront2.Models.CartItemViewModel>)
+                                                Session["cart"]).Count)</li>
+                                        }
+
+                                    </a>
+                                    
+                                    <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle            js-menu-toggle"><span class="icon-menu"></span></a></li>
                                 </ul>
                             </div>
                         </div>
