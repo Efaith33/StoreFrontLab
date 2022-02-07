@@ -12,19 +12,52 @@
         @Html.ActionLink("Back to Products Table", "ProductsTable", "Products", null, new { @class = "btn btn-primary" })
     </span>
 </p>
-<table class="table text-center">
+<table class="table text-center" id="CategoriesTable">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                <a href="" class="DetailsLink" id="@item.CategoryID">Details</a>
+                @*@Html.ActionLink("Details", "Details", new { id=item.CategoryID })*@ |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID })
+
+            </td>
+        </tr>
+    }
 
 </table>
+<div id="CategoryDetails"></div>
+@section scripts{
+    <script>
+
+        //******** AJAX Details ********//     // (e) = (event) param name//
+        $('a.DetailsLink').click(function (e) {
+            e.preventDefault(); //prevents the default behavior of the page reloading after clicking the <a>
+
+            //target pop-up placeholder div, pass it data (this clicked items id)
+            //then apply jQueryUI dialog plugin to make it a pop-up w/ some settings
+            //open the PubDetails partial view in the pop-up for the correct publisher
+            //go to jqueryUI --> jqueryui.com
+            $("#CategoryDetails").data("cId", $(this).attr('id'))
+                .dialog({
+                    width: 400,
+                    height: 260,
+                    open: function () {
+                        var catID = $(this).data('cId');
+                        $(this).load("/Categories/CategoryDetails/" + catID);
+                    },
+                    title: "Category Details",
+                    modal: true,
+                    resizeable: false
+                })
+        }); //end of details click event
+
+    </script>
+
+}
+

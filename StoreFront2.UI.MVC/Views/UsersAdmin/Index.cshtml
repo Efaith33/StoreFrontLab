@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<StoreFront2.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "User Admin";
 }
 
-<h2>Index</h2>
+<h2 class="text-center p-2">@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
+<table class="table text-center">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserName)

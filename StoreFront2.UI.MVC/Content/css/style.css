@@ -254,9 +254,9 @@ a {
         display: inline-block;
     }
 
-        .site-navbar .site-top-icons ul li a {
+        /*.site-navbar .site-top-icons ul li a {
             margin-right: 10px;
-        }
+        }*/
 
             .site-navbar .site-top-icons ul li a.site-cart {
                 display: block;
@@ -1087,4 +1087,5 @@ a {
 .detailheader {
     text-align: center;
 }
+
 

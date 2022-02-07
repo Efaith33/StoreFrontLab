@@ -35,6 +35,13 @@ namespace StoreFront2.Controllers
             return View(category);
         }
 
+        [HttpGet]
+        public PartialViewResult CategoryDetails(int id)
+        {
+            Category category = db.Categories.Find(id);
+            return PartialView(category);
+        }
+
         // GET: Categories/Create
         public ActionResult Create()
         {
