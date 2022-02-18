@@ -7,7 +7,7 @@
 @using (Html.BeginForm("Create", "Products", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-            <h2 class="text-center">@ViewBag.Title</h2>
+    <h2 class="text-center">@ViewBag.Title</h2>
     <div class="row p-1 m-2">
         <div class="form-horizontal col-md-6 text-center">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -70,16 +70,16 @@
         </div>
 
         <div class="col-md-4 mt-4">
-            <img src="~/Content/images/eaglenebula.jpg" style="max-width: 550px"/>
+            <img src="~/Content/images/eaglenebula.jpg" style="max-width: 550px" />
         </div>
+    </div>
+    <div class="text-center m-4">
+        <input type="submit" value="Create" class="btn btn-primary" />|
+        @Html.ActionLink("Back to List", "ProductsTable", null, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to Shop All", "Index", "Products", new { @class = "btn btn-primary" })
     </div>
 }
 
-<div class="text-center m-4">
-    <input type="submit" value="Create" class="btn btn-primary" /> |
-    @Html.ActionLink("Back to List", "ProductsTable", null, new { @class = "btn btn-primary" }) |
-    @Html.ActionLink("Back to Shop All", "Index", "Products", new { @class = "btn btn-primary" })
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

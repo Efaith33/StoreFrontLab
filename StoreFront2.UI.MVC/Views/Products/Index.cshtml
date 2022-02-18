@@ -1,10 +1,10 @@
-﻿@model IEnumerable<StoreFront2.DATA.EF.Product>
+﻿@model PagedList.IPagedList<StoreFront2.DATA.EF.Product>
 @using PagedList.Mvc
 @{
     ViewBag.Title = "Shop All";
 }
 
-@* You could add a button that only admin users see that takes them to the table view*@
+
 
 <div class="site-section" style="background-image: url('../../Content/images/space2.jpg'); background-repeat:no-repeat; background-size: cover">
 
@@ -16,7 +16,7 @@
                         <div class="mb-4"><h2 class="text-black h5">Shop All</h2></div>
                         @if (User.Identity.IsAuthenticated)
                         {
-                        @Html.ActionLink("Table View", "ProductsTable", "Products", null, new { @class = "btn btn-primary" } )
+                            @Html.ActionLink("Table View", "ProductsTable", "Products", null, new { @class = "btn btn-primary" })
                         }
                     </div>
                 </div>
@@ -45,18 +45,11 @@
                         </div>
                     }
                 </div>
-                <div class="row" data-aos="fade-up">
-                    <div class="col-md-12 text-center">
+                <div class="row m-4">
+                    <div class="col-md-12">
                         <div class="site-block-27">
-                            <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
-                            </ul>
+                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.SearchString }))
                         </div>
                     </div>
                 </div>
@@ -66,9 +59,9 @@
                 <div class="border p-4 rounded mb-4">
                     <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "1"})" class="d-flex"><span>Suit</span> <span class="text-black ml-auto">(12)</span></a></li>
-                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "2"})" class="d-flex"><span>Tools</span> <span class="text-black ml-auto">(6)</span></a></li>
-                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "3"})" class="d-flex"><span>Rocketry</span> <span class="text-black ml-auto">(6)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "1"})" class="d-flex"><span>Suit</span> <span class="text-black ml-auto">(12)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "2"})" class="d-flex"><span>Tools</span> <span class="text-black ml-auto">(6)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "3"})" class="d-flex"><span>Rocketry</span> <span class="text-black ml-auto">(6)</span></a></li>
                     </ul>
                 </div>
             </div>

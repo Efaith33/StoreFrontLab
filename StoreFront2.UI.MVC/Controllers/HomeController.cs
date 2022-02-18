@@ -1,5 +1,6 @@
 ﻿using StoreFront2.Models;
 using System;
+using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using System.Web.Mvc;
@@ -43,18 +44,21 @@ namespace StoreFront2.UI.MVC.Controllers
             }
             string message = $"You have received an email from {cvm.Name} with a subject of {cvm.Subject}. Please respond to {cvm.Email} with your response to the following message: <br/>{cvm.Message}";
 
-            MailMessage mm = new MailMessage("admin@eric-faith.net", "weibleyeric@yahoo.com", cvm.Subject, message);
+            MailMessage mm = new MailMessage(
+                ConfigurationManager.AppSettings["EmailUser"].ToString(),
+                ConfigurationManager.AppSettings["EmailTo"].ToString(),
+                cvm.Subject,
+                message);
 
             mm.IsBodyHtml = true;
             mm.Priority = MailPriority.High;
             mm.ReplyToList.Add(cvm.Email);
 
 
-            SmtpClient client = new SmtpClient("mail.eric-faith.net");
-            client.Port = 25; //alt port number is 8889
-            client.EnableSsl = false;
+            SmtpClient client = new SmtpClient(ConfigurationManager.AppSettings["EmailClient"].ToString());
 
-            client.Credentials = new NetworkCredential("admin@eric-faith.net", "P@ssw0rd");
+            client.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["EmailUser"].ToString(),
+                ConfigurationManager.AppSettings["EmailPass"].ToString());
 
             try
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreFront2.DATA.EF;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,7 +9,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
-using StoreFront2.DATA.EF;
 using StoreFront2.Models;
 using StoreFront2.UI.MVC.Utilities;
 
@@ -18,9 +18,9 @@ namespace StoreFront2.Controllers
     {
         private StoreFrontEntities db = new StoreFrontEntities();
 
-        public ActionResult StoreFrontMVCPaging(string searchString, int page = 1)
+        public ActionResult index(string searchString, int page = 1)
         {
-            int pageSize = 5;
+            int pageSize = 6;
 
             var products = db.Products.OrderBy(p => p.Name).ToList();
 
@@ -28,7 +28,8 @@ namespace StoreFront2.Controllers
             {
                 products = (
                             from p in products
-                            where p.Name.ToLower().Contains(searchString.ToLower())
+                            where p.Name.ToLower().Contains(searchString.ToLower()) ||
+                                  p.Category.CategoryName.ToLower().Contains(searchString.ToLower())
                             select p
                          ).ToList();
             }
@@ -39,11 +40,11 @@ namespace StoreFront2.Controllers
         }
 
         // GET: Products
-        public ActionResult Index()
-        {
-            var products = db.Products.Include(p => p.Category).Include(p => p.Product_Status);
-            return View(products.ToList());
-        }
+        //public ActionResult Index()
+        //{
+        //    var products = db.Products.Include(p => p.Category).Include(p => p.Product_Status);
+        //    return View(products.ToList());
+        //}
 
         // GET: Products
         public ActionResult ProductsTable()

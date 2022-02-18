@@ -65,6 +65,8 @@
     <Compile Include="Employee.cs">
       <DependentUpon>StoreFrontDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="PageCount.cs" />
+    <Compile Include="PageNumber.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>StoreFrontDB.tt</DependentUpon>
     </Compile>

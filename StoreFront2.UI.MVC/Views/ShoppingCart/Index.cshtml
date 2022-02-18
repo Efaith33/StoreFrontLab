@@ -64,7 +64,7 @@ else
                     @string.Format($"{lineTotal:c}")
                 </td>
                 <td>
-                    @Html.ActionLink("Remove from Cart", "RemoveFromCart", new { id = item.Key })
+                    @Html.ActionLink("Remove from Cart", "RemoveFromCart", new { id = item.Key }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
