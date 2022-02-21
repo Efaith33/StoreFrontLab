@@ -39,15 +39,6 @@ namespace StoreFront2.Controllers
             return View(products.ToPagedList(page, pageSize));
         }
 
-
-
-        // GET: Products
-        //public ActionResult Index()
-        //{
-        //    var products = db.Products.Include(p => p.Category).Include(p => p.Product_Status);
-        //    return View(products.ToList());
-        //}
-
         // GET: Products
         public ActionResult ProductsTable()
         {
@@ -93,11 +84,8 @@ namespace StoreFront2.Controllers
             }
             else
             {
-                //if book ID is valid, add the line-item to the cart
                 CartItemViewModel item = new CartItemViewModel(qty, product);
 
-                //put item in the local shoppingCart collection. BUT if we already have that product as a cart-item , then we will
-                //update the qty only
                 if (shoppingCart.ContainsKey(product.ProductID))
 
                 {
@@ -108,11 +96,9 @@ namespace StoreFront2.Controllers
                     shoppingCart.Add(product.ProductID, item);
                 }
 
-                //now update the Session version of the cart so we can maintain that info between Request and Response cycles
-                Session["cart"] = shoppingCart; //implicit casting aka boxing
+                Session["cart"] = shoppingCart; 
             }
 
-            //send to a view that shows a list of all items in the cart
             return RedirectToAction("Index", "ShoppingCart");
 
         }
@@ -126,33 +112,29 @@ namespace StoreFront2.Controllers
         }
 
         // POST: Products/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductID,Name,Description,CategoryID,Price,ProductStatusID,Quanity,ProductImage")] Product product, HttpPostedFileBase productImage)
         {
             if (ModelState.IsValid)
             {
-                //Image Upload Utility Step 6
+
                 #region File Upload
                 string file = "NoImage.png";
 
                 if (productImage != null)
                 {
-                    //Process the file that was uploaded by the user
+
                     file = productImage.FileName;
                     string ext = file.Substring(file.LastIndexOf('.'));
                     string[] goodExts = { ".jpeg", ".jpg", ".png", ".gif" };
-                    //This if checks to see the file uploaded is the right type of file
-                    //i.e. file extension would be included in the goodExts
-                    //We will also require the file uploaded to be 4 MB or less in size
+
                     if (goodExts.Contains(ext.ToLower()) && productImage.ContentLength <= 4194304)
                     {
-                        //Create a new file name using a GUID (Globally Unique Identifier)
+
                         file = Guid.NewGuid() + ext;
 
-                        string savePath = Server.MapPath("~/Content/images/"); //This is where the images will be saved
+                        string savePath = Server.MapPath("~/Content/images/"); 
                         Image convertedImage = Image.FromStream(productImage.InputStream);
                         int maxImageSize = 500;
                         int maxThumbSize = 100;
@@ -160,7 +142,7 @@ namespace StoreFront2.Controllers
                         ImageUtility.ResizeImage(savePath, file, convertedImage, maxImageSize, maxThumbSize);
                     }
                 }
-                //no matter what, update the BookImage with the value of the file variable
+       
                 product.ProductImage = file;
                 #endregion
 
@@ -192,15 +174,12 @@ namespace StoreFront2.Controllers
         }
 
         // POST: Products/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductID,Name,Description,CategoryID,Price,ProductStatusID,Quanity,ProductImage")] Product product, HttpPostedFileBase productImage)
         {
             if (ModelState.IsValid)
             {
-                //Image Upload Utility Step 10
                 #region File Upload
                 if (productImage != null)
                 {
