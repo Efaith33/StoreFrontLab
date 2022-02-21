@@ -30,7 +30,7 @@
                                 </figure>
                                 <div class="block-4-text p-4">
                                     <h3><a href="@Url.Action("Details", "Products", new { id = item.ProductID })">@item.Name</a></h3>
-                                    <p class="text-primary font-weight-bold">$@item.Price</p>
+                                    <p class="text-primary font-weight-bold">@item.Price.ToString("c")</p>
                                     <p>
                                         @using (Html.BeginForm("AddToCart", "Products", new { @productID = item.ProductID }, FormMethod.Post, new { @class = "text-center" }))
                                         {
@@ -44,8 +44,7 @@
                             </div>
                         </div>
                     }
-                </div>
-                <div class="row m-4">
+                <div class="row m-4 justify-content-center">
                     <div class="col-md-12">
                         <div class="site-block-27">
                             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
@@ -53,15 +52,17 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <div class="col-md-3 order-1 mb-5 mb-md-0">
                 <div class="border p-4 rounded mb-4">
                     <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "1"})" class="d-flex"><span>Suit</span> <span class="text-black ml-auto">(12)</span></a></li>
-                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "2"})" class="d-flex"><span>Tools</span> <span class="text-black ml-auto">(6)</span></a></li>
-                        <li class="mb-1"><a href="@Url.Action("Index", "Products", new { categoryId = "3"})" class="d-flex"><span>Rocketry</span> <span class="text-black ml-auto">(6)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "1"})" class="d-flex"><span>Suit</span> 
+                            <span class="text-black ml-auto">(12)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "2"})" class="d-flex"><span>Tools</span> <span class="text-black ml-auto">(6)</span></a></li>
+                        <li class="mb-1"><a href="@Url.Action("ProductSearch", "Filters", new { categoryId = "3"})" class="d-flex"><span>Rocketry</span> <span class="text-black ml-auto">(6)</span></a></li>
                     </ul>
                 </div>
             </div>

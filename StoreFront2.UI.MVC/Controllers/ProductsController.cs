@@ -18,7 +18,7 @@ namespace StoreFront2.Controllers
     {
         private StoreFrontEntities db = new StoreFrontEntities();
 
-        public ActionResult index(string searchString, int page = 1)
+        public ActionResult Index(string searchString, int page = 1)
         {
             int pageSize = 6;
 
@@ -38,6 +38,8 @@ namespace StoreFront2.Controllers
 
             return View(products.ToPagedList(page, pageSize));
         }
+
+
 
         // GET: Products
         //public ActionResult Index()

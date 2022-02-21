@@ -36,7 +36,7 @@
                             <div class="site-top-icons">
                                 <ul>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"         aria-expanded="false"><span class="icon icon-person"></span></a>
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="icon icon-person"></span></a>
                                         <div class="dropdown-menu account-dropdown">
                                             @Html.Partial("_LoginPartial")
                                         </div>
@@ -52,16 +52,16 @@
                                         {
                                             <li class="count">
                                                 @(((Dictionary<int, StoreFront2.Models.CartItemViewModel>)
-                                                  Session["cart"]).Count)
+                                                                                          Session["cart"]).Count)
                                             </li>
                                         }
 
                                     </a>
-                                    
+
                                     <li class="icon icon-facebook-square p-1"></li>
                                     <li class="icon icon-twitter p-1"></li>
                                     <li class="icon icon-instagram p-1"></li>
-                                  
+
                                 </ul>
                             </div>
                         </div>
@@ -69,16 +69,23 @@
                     </div>
                 </div>
             </div>
-            <nav class="site-navigation text-right text-md-center" role="navigation">
+            <div id="navblock" class="transparent-nav">
                 <div class="container">
-                    <ul class="site-menu js-clone-nav d-none d-md-block">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Shop", "Index", "Products")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
+                    @*<button class="navbar-toggle">
+                        <span></span>
+                    </button>*@
+                    <nav id="nav" class="site-navigation text-right text-md-center">
+                        <ul class="site-menu js-clone-nav d-none d-md-block">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Shop", "Index", "Products")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
                 </div>
-            </nav>
+            </div>
+
+
         </header>
 
         <div>@RenderBody()</div>
@@ -119,7 +126,7 @@
                     <div class="col-md-12 col-lg-4">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66766.19056868591!2d-80.6116702924594!3d28.420293498254605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0a69b9e2aa171%3A0xa7ee0d38755c3679!2sLaunch%20Complex%2025!5e0!3m2!1sen!2sus!4v1643329069178!5m2!1sen!2sus" width="500" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                   
+
                 </div>
                 <div class="row mt-2 text-center">
                     <div class="col-md-12">
@@ -140,7 +147,7 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script >
+    <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

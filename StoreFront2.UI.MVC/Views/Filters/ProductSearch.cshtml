@@ -30,7 +30,7 @@
                                 </figure>
                                 <div class="block-4-text p-4">
                                     <h3><a href="@Url.Action("Details", "Products", new { id = item.ProductID })">@item.Name</a></h3>
-                                    <p class="text-primary font-weight-bold">$@item.Price</p>
+                                    <p class="text-primary font-weight-bold">@item.Price.ToString("c")</p>
                                     <p>
                                         @using (Html.BeginForm("AddToCart", "Products", new { @productID = item.ProductID }, FormMethod.Post, new { @class = "text-center" }))
                                         {
