@@ -308,8 +308,8 @@ a {
     margin-bottom: 0;
 }
 
-    .site-navbar .site-navigation .site-menu .active > a {
-        color: white;
+    .site-navbar .site-navigation .site-menu:active {
+        color: midnightblue;
     }
 
     .site-navbar .site-navigation .site-menu a {
@@ -332,7 +332,7 @@ a {
             text-decoration: none !important;
         }
 
-            .site-navbar .site-navigation .site-menu > li > a:hover {
+            .site-navbar .site-navigation .site-menu:hover {
                 color: midnightblue;
             }
 
@@ -1233,3 +1233,5 @@ a {
         -ms-transform: translateY(-10px) rotate(-45deg);
         transform: translateY(-10px) rotate(-45deg);
     }
+
+

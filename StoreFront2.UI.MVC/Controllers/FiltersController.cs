@@ -6,6 +6,7 @@ using System.Data.Entity;
 using PagedList;
 
 
+
 namespace StoreFront2.UI.MVC.Controllers
 {
     public class FiltersController : Controller
