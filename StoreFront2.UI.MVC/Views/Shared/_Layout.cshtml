@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
     @Styles.Render("~/Content/css")
@@ -52,7 +53,7 @@
                                         {
                                             <li class="count">
                                                 @(((Dictionary<int, StoreFront2.Models.CartItemViewModel>)
-                                                                                          Session["cart"]).Count)
+                                                                                                          Session["cart"]).Count)
                                             </li>
                                         }
 
@@ -69,23 +70,18 @@
                     </div>
                 </div>
             </div>
-            <div id="navblock" class="transparent-nav">
-                <div class="container">
-                    @*<button class="navbar-toggle">
-                        <span></span>
-                    </button>*@
-                    <nav id="nav" class="site-navigation text-right text-md-center">
-                        <ul class="site-menu d-none d-md-block">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Shop", "Index", "Products")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
 
-
+            <nav id="myTopnav" class="topnav">
+                <div class="text-center p-2">
+                    <a>@Html.ActionLink("Home", "Index", "Home")</a>
+                    <a class="p-3">@Html.ActionLink("About", "About", "Home")</a>
+                    <a class="p-3">@Html.ActionLink("Shop", "Index", "Products")</a>
+                    <a class="p-3">@Html.ActionLink("Contact", "Contact", "Home")</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div> 
+            </nav>
         </header>
 
         <div>@RenderBody()</div>
@@ -149,5 +145,15 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
     @RenderSection("scripts", required: false)
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 </html>
